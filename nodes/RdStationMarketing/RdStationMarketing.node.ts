@@ -21,7 +21,7 @@ export class RdStationMarketing implements INodeType {
 		outputs: ['main'],
 		credentials: [
 			{
-				name: 'RdStationMarketingApi',
+				name: 'rdStationMarketingApi',
 				required: true,
 			},
 		],
