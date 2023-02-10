@@ -4,7 +4,7 @@ import { IDataObject, INodeExecutionData, INodeType, INodeTypeDescription } from
 
 import { OptionsWithUri } from 'request';
 
-export class RdStationMarketinf implements INodeType {
+export class RdStationMarketing implements INodeType {
 	description: INodeTypeDescription = {
 		// Basic node details will go here
 		displayName: 'RD Station Marketing',
