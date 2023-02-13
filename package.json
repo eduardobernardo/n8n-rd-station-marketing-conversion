@@ -1,19 +1,19 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-rd-station-marketing-conversion",
   "version": "0.1.0",
-  "description": "",
+  "description": "n8n node to create a new conversion in RD Station Marketing",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://n8n.io",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Eduardo Matheus Bernardo Silva",
+    "email": "bernardo@idxcode.com.br"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/indexdc/n8n-rd-station-marketing.git"
   },
   "main": "index.js",
   "scripts": {
@@ -30,12 +30,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/RdStationMarketingApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/RdStationMarketing/RdStationMarketing.node.js"
     ]
   },
   "devDependencies": {
