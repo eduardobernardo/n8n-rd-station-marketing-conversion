@@ -154,15 +154,10 @@ export class RdStationMarketing implements INodeType {
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 
 		const credentials = await this.getCredentials('rdStationMarketingApi') as { url: string, accessToken: string };
-		console.log(`Executing Credentials: ${credentials}`);
 
 		if (credentials === undefined) {
 			throw new NodeOperationError(this.getNode(), 'No credentials got returned!');
 		}
-
-	// const params = credentials;
-	// const url = params.url!.replace(/\/$/, "") || null;
-	// const accessToken = params.accessToken! || null;
 
 		// Handle data coming from previous nodes
 		const items = this.getInputData();
@@ -204,23 +199,20 @@ export class RdStationMarketing implements INodeType {
 						Object.assign(payload, data);
 					}
 
-					const data: IDataObject = {
-						event_type: "CONVERSION",
-						event_family: "CDP",
-						payload
-					};
-
 					const options: OptionsWithUri = {
 						headers: {
 							'Accept': 'application/json',
 						},
 						method: 'POST',
 						body: {
-							data
+							event_type: "CONVERSION",
+							event_family: "CDP",
+							payload
 						},
 						uri: `https://api.rd.services/platform/conversions`,
 						json: true,
 					};
+					console.log(options);
 					responseData = await this.helpers.requestWithAuthentication.call(this, 'rdStationMarketingApi', options);
 					returnData.push(responseData);
 				}
